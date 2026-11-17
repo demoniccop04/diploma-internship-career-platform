@@ -53,4 +53,29 @@
 
 ### 4. Sequence: жеке кәсіби траектория құру
 
-4-жұмыстың диаграммасы осы бөлімге қосылады.
+Бұл диаграмма сол прецедентті сипаттайды. Нысандар: `:StudentProfile`, `:TrajectoryService`, `:InternshipCatalog`, `:CareerTrajectory`. Тұтас көрсеткі — әдіс шақыруы, пунктир көрсеткі — жауап. Әдістер мен параметрлер нөмірленіп жазылған.
+
+![Жеке кәсіби траектория құру Sequence диаграммасы](docs/diagrams/04-sequence.png)
+
+## Әдістердің жобалық мағынасы
+
+| Класс | Әдіс | Міндеті |
+| --- | --- | --- |
+| `StudentProfile` | `getProfile(studentId)` | Студент профилі мен мақсатын алу |
+| `StudentProfile` | `isComplete()` | Міндетті деректердің толықтығын тексеру |
+| `TrajectoryService` | `buildTrajectory(profile, goal)` | Жеке траектория құру процесін бастау |
+| `InternshipCatalog` | `findMatches(skills, goal)` | Дағдылар мен мақсатқа сәйкес стажировкаларды табу |
+| `CareerTrajectory` | `createSteps(skillGaps, matches)` | Жетпейтін дағдыларға сүйеніп даму қадамдарын құру |
+| `CareerTrajectory` | `save(studentId, steps)` | Құрылған траекторияны сақтау |
+
+## Құрылым
+
+```text
+README.md
+docs/diagrams/
+  03-activity.drawio
+  03-activity.png
+  04-sequence.drawio
+  04-sequence.png
+src/  (кейінгі бағдарлама коды)
+```
